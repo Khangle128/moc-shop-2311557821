@@ -1,0 +1,22 @@
+# Tệp hệ thống Windows / macOS
+desktop.ini
+Thumbs.db
+.DS_Store
+
+# Tệp tạm Microsoft Office / trình soạn thảo
+~$*
+*.tmp
+*.bak
+.vscode/
+.idea/
+
+# Biến môi trường và thư mục triển khai (nếu có sau này)
+.env
+.env.*
+node_modules/
+.vercel/
+.firebase/
+
+# Thư mục tài liệu & công cụ có sẵn ngoài mã nguồn website AuraHandmade
+v2/
+AI 2028 NEW/

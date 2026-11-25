@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AuraHandmade – Cửa hàng bán móc khoá thủ công và dụng cụ trang trí đồ handmade tại TP.HCM. Thanh toán COD, miễn phí giao hàng đơn từ 300.000đ.">
+  <title>AuraHandmade – Móc khoá &amp; Dụng cụ trang trí thủ công tại TP.HCM</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9C%BF%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Thanh đầu trang cố định để thông báo thực hành và giỏ hàng luôn hiển thị -->
+  <div class="sticky-top-shell">
+    <div class="practice-notice" role="status">
+      <span>📌 Website thực hành – không bán hàng thật</span>
+    </div>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#top" class="brand-logo">
+          <span class="brand-mark" aria-hidden="true">✿</span>
+          <span class="brand-text">AuraHandmade</span>
+          <span class="brand-tag">TP.HCM</span>
+        </a>
+
+        <nav class="main-nav" aria-label="Menu chính">
+          <a href="#san-pham" class="nav-link">Sản phẩm</a>
+          <a href="#chinh-sach" class="nav-link">Chính sách</a>
+          <a href="#lien-he" class="nav-link">Liên hệ</a>
+        </nav>
+
+        <button type="button" id="open-cart-btn" class="cart-trigger">
+          <span class="cart-icon" aria-hidden="true">🛒</span>
+          <span class="cart-label">Giỏ hàng</span>
+          <span id="header-cart-count" class="cart-count">0</span>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <main id="top">
+    <!-- Banner khuyến mãi -->
+    <section class="hero-section" aria-label="Khuyến mãi AuraHandmade">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-pills">
+            <span class="pill pill-accent">🎁 Miễn phí giao hàng đơn từ 300.000đ</span>
+            <span class="pill pill-warning">Website thực hành – không bán hàng thật</span>
+          </div>
+          <h1>Móc khoá thủ công &amp; dụng cụ tự tay trang trí tại TP.HCM</h1>
+          <p class="hero-desc">
+            Những món đồ nhỏ xinh làm thủ công tỉ mỉ và bộ dụng cụ sáng tạo cho người mới bắt đầu.
+            Đặt hàng nhanh chóng, kiểm tra ngoại quan gói hàng rồi mới thanh toán khi nhận hàng (COD).
+          </p>
+          <div class="hero-actions">
+            <a href="#san-pham" class="btn btn-primary">Xem sản phẩm ngay</a>
+            <button type="button" id="hero-open-cart" class="btn btn-secondary">Xem giỏ hàng</button>
+          </div>
+        </div>
+
+        <div class="hero-showcase" aria-hidden="true">
+          <div class="showcase-card showcase-a">
+            <span class="showcase-emoji">🌻</span>
+            <strong>Móc khoá len</strong>
+            <span>Từ 65.000đ</span>
+          </div>
+          <div class="showcase-card showcase-b">
+            <span class="showcase-emoji">🌸</span>
+            <strong>Resin hoa khô</strong>
+            <span>Đổ tay thủ công</span>
+          </div>
+          <div class="showcase-card showcase-c">
+            <span class="showcase-emoji">🌷</span>
+            <strong>Set kẽm nhung</strong>
+            <span>Tự làm quà xinh</span>
+          </div>
+          <div class="showcase-card showcase-d">
+            <span class="showcase-emoji">🚚</span>
+            <strong>Chỉ nhận COD</strong>
+            <span>Ship 25.000đ</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Danh mục 8 sản phẩm + Bộ lọc -->
+    <section id="san-pham" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Danh mục sản phẩm</h2>
+            <p class="section-sub">Chọn nhanh theo nhóm để xem các mẫu móc khoá và dụng cụ trang trí của AuraHandmade.</p>
+          </div>
+
+          <div class="filter-group" role="group" aria-label="Bộ lọc nhóm sản phẩm">
+            <button type="button" class="filter-btn is-active" data-category="all">Tất cả (8)</button>
+            <button type="button" class="filter-btn" data-category="Móc khoá">Móc khoá (4)</button>
+            <button type="button" class="filter-btn" data-category="Dụng cụ trang trí">Dụng cụ trang trí (4)</button>
+          </div>
+        </div>
+
+        <div id="product-grid" class="product-grid">
+          <!-- Sản phẩm sẽ được render từ products.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Giỏ hàng & Form đặt hàng COD -->
+    <section id="dat-hang" class="section section-tinted">
+      <div class="container">
+        <div class="section-head section-head-stack">
+          <h2>Giỏ hàng &amp; Đặt hàng thanh toán khi nhận hàng (COD)</h2>
+          <p class="section-sub">
+            Kiểm tra lại các món đã chọn, số lượng và thông tin giao hàng trước khi hoàn tất đơn thực hành.
+          </p>
+        </div>
+
+        <div id="order-confirmation" class="order-confirmation" hidden aria-live="polite">
+          <!-- Kết quả đặt hàng thành công được hiển thị ở đây -->
+        </div>
+
+        <div class="checkout-layout">
+          <!-- Cột tóm tắt giỏ hàng -->
+          <div class="panel cart-panel">
+            <div class="panel-header">
+              <h3>Giỏ hàng của bạn</h3>
+              <span id="checkout-item-badge" class="muted-text">0 sản phẩm</span>
+            </div>
+
+            <div id="free-ship-banner" class="free-ship-hint">
+              Thêm sản phẩm vào giỏ để được miễn phí giao hàng cho đơn từ <strong>300.000đ</strong>.
+            </div>
+
+            <div id="page-cart-items" class="cart-items-list">
+              <!-- Danh sách món trong giỏ hàng -->
+            </div>
+
+            <div id="page-cart-summary" class="cost-summary">
+              <div class="cost-row">
+                <span>Tạm tính</span>
+                <strong id="page-subtotal">0đ</strong>
+              </div>
+              <div class="cost-row">
+                <span>Phí giao hàng</span>
+                <strong id="page-shipping">0đ</strong>
+              </div>
+              <div class="cost-row cost-total">
+                <span>Tổng tiền (thanh toán COD)</span>
+                <strong id="page-total">0đ</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cột thông tin đặt hàng COD -->
+          <form id="checkout-form" class="panel form-panel" novalidate>
+            <div class="panel-header">
+              <h3>Thông tin người nhận (COD)</h3>
+              <span class="cod-pill">Chỉ nhận tiền mặt COD</span>
+            </div>
+
+            <div class="field-group">
+              <label for="customer-name">Họ và tên <span class="required">*</span></label>
+              <input
+                type="text"
+                id="customer-name"
+                name="customerName"
+                placeholder="Ví dụ: Nguyễn Minh Anh"
+                autocomplete="name"
+                required
+              >
+            </div>
+
+            <div class="field-group">
+              <label for="customer-phone">Số điện thoại <span class="required">*</span></label>
+              <input
+                type="tel"
+                id="customer-phone"
+                name="customerPhone"
+                placeholder="Ví dụ: 0901234567"
+                autocomplete="tel"
+                required
+              >
+            </div>
+
+            <div class="field-group">
+              <label for="customer-address">Địa chỉ giao hàng <span class="required">*</span></label>
+              <textarea
+                id="customer-address"
+                name="customerAddress"
+                rows="2"
+                placeholder="Số nhà, tên đường, phường/xã, quận/huyện, TP. Hồ Chí Minh"
+                autocomplete="street-address"
+                required
+              ></textarea>
+            </div>
+
+            <div class="field-group">
+              <label for="customer-note">Ghi chú cho người giao / cửa hàng</label>
+              <textarea
+                id="customer-note"
+                name="customerNote"
+                rows="2"
+                placeholder="Ví dụ: Giao giờ hành chính, gọi trước khi giao..."
+              ></textarea>
+            </div>
+
+            <div class="payment-box">
+              <span class="payment-title">Phương thức thanh toán</span>
+              <label class="payment-option">
+                <input type="radio" name="paymentMethod" value="COD" checked readonly>
+                <span>
+                  <strong>Thanh toán khi nhận hàng (COD)</strong>
+                  <small>Trả tiền mặt trực tiếp cho nhân viên giao hàng. Cửa hàng không hỗ trợ thanh toán online và không thu thông tin thẻ.</small>
+                </span>
+              </label>
+            </div>
+
+            <label class="consent-box" for="consent-checkbox">
+              <input type="checkbox" id="consent-checkbox" required>
+              <span>Tôi đồng ý cho cửa hàng dùng thông tin này để giao hàng <span class="required">*</span></span>
+            </label>
+
+            <div id="form-error" class="form-error" role="alert" hidden></div>
+
+            <button type="submit" id="submit-order-btn" class="btn btn-primary btn-full">
+              Xác nhận đặt hàng (COD)
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chính sách giao hàng & đổi trả -->
+    <section id="chinh-sach" class="section">
+      <div class="container">
+        <div class="section-head section-head-stack">
+          <h2>Chính sách cửa hàng</h2>
+          <p class="section-sub">Thông tin rõ ràng giúp bạn yên tâm khi chọn mua đồ thủ công tại AuraHandmade.</p>
+        </div>
+
+        <div class="policy-grid">
+          <article class="policy-card">
+            <div class="policy-icon" aria-hidden="true">🚚</div>
+            <h3>Chính sách giao hàng</h3>
+            <ul>
+              <li>Phí giao hàng đồng giá <strong>25.000đ</strong> cho đơn dưới 300.000đ.</li>
+              <li><strong>Miễn phí giao hàng</strong> cho tất cả đơn từ <strong>300.000đ</strong> trở lên.</li>
+              <li>Nội thành TP.HCM dự kiến 1–2 ngày làm việc; khu vực khác 3–5 ngày.</li>
+              <li>Thanh toán COD trực tiếp khi nhận hàng, được kiểm tra ngoại quan gói hàng.</li>
+            </ul>
+          </article>
+
+          <article class="policy-card">
+            <div class="policy-icon" aria-hidden="true">🔄</div>
+            <h3>Chính sách đổi trả trong 7 ngày</h3>
+            <ul>
+              <li>Hỗ trợ đổi mới hoặc hoàn trả trong vòng <strong>7 ngày</strong> kể từ ngày nhận hàng.</li>
+              <li>Áp dụng khi sản phẩm lỗi gia công thủ công, hư hỏng do vận chuyển hoặc giao sai mẫu.</li>
+              <li>Sản phẩm cần giữ nguyên vẹn, chưa qua sử dụng và kèm mã đơn hàng.</li>
+              <li>Cửa hàng chịu phí vận chuyển hai chiều nếu lỗi xuất phát từ phía cửa hàng.</li>
+            </ul>
+          </article>
+
+          <article class="policy-card">
+            <div class="policy-icon" aria-hidden="true">🛡️</div>
+            <h3>Bảo mật &amp; Thực hành</h3>
+            <ul>
+              <li>Website chỉ phục vụ mục đích học tập &amp; thực hành thương mại điện tử.</li>
+              <li>Không thu thập dữ liệu thẻ ngân hàng, ví điện tử hay thanh toán trực tuyến.</li>
+              <li>Giỏ hàng chỉ lưu cục bộ trên trình duyệt của bạn bằng <code>localStorage</code>.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Liên hệ & Chân trang -->
+  <footer id="lien-he" class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand-logo footer-brand">
+          <span class="brand-mark" aria-hidden="true">✿</span>
+          <span class="brand-text">AuraHandmade</span>
+        </div>
+        <p class="footer-desc">
+          Cửa hàng bán móc khoá len, resin, macrame và dụng cụ trang trí đồ thủ công tại TP.HCM.
+        </p>
+        <p class="footer-practice">Website thực hành – không bán hàng thật</p>
+      </div>
+
+      <div>
+        <h4>Thông tin liên hệ (mẫu)</h4>
+        <ul class="contact-list">
+          <li>📍 Địa chỉ: 128 Nguyễn Thị Minh Khai, Quận 3, TP. Hồ Chí Minh</li>
+          <li>📞 Hotline: 0900 000 128 (08:30 – 20:30 hằng ngày)</li>
+          <li>✉️ Email: hotro@aurahandmade.example</li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Liên kết nhanh</h4>
+        <ul class="contact-list">
+          <li><a href="#san-pham">Danh mục 8 sản phẩm</a></li>
+          <li><a href="#dat-hang">Giỏ hàng &amp; Đặt hàng COD</a></li>
+          <li><a href="#chinh-sach">Chính sách giao hàng &amp; đổi trả 7 ngày</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Ngăn kéo giỏ hàng (Cart Drawer) -->
+  <div id="cart-backdrop" class="cart-backdrop" hidden></div>
+  <aside id="cart-drawer" class="cart-drawer" aria-label="Giỏ hàng chi tiết" aria-hidden="true">
+    <div class="drawer-header">
+      <h3>🛒 Giỏ hàng của bạn</h3>
+      <button type="button" id="close-cart-btn" class="icon-close-btn" aria-label="Đóng giỏ hàng">✕</button>
+    </div>
+
+    <div id="drawer-free-ship" class="free-ship-hint drawer-hint">
+      Thêm sản phẩm để kiểm tra ưu đãi miễn phí giao hàng từ <strong>300.000đ</strong>.
+    </div>
+
+    <div id="drawer-cart-items" class="drawer-body">
+      <!-- Danh sách sản phẩm trong drawer -->
+    </div>
+
+    <div class="drawer-footer">
+      <div class="cost-summary">
+        <div class="cost-row">
+          <span>Tạm tính</span>
+          <strong id="drawer-subtotal">0đ</strong>
+        </div>
+        <div class="cost-row">
+          <span>Phí giao hàng</span>
+          <strong id="drawer-shipping">0đ</strong>
+        </div>
+        <div class="cost-row cost-total">
+          <span>Tổng tiền</span>
+          <strong id="drawer-total">0đ</strong>
+        </div>
+      </div>
+
+      <button type="button" id="drawer-checkout-btn" class="btn btn-primary btn-full">
+        Điền thông tin đặt hàng (COD)
+      </button>
+    </div>
+  </aside>
+
+  <!-- Thông báo nhanh khi thêm sản phẩm -->
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden>
+    <span id="toast-message">Đã thêm sản phẩm vào giỏ</span>
+    <button type="button" id="toast-view-cart" class="toast-action">Xem giỏ</button>
+  </div>
+
+  <script src="products.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
